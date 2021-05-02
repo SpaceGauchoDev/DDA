@@ -24,7 +24,8 @@ public class Cliente {
        
     }
     
-    public boolean verificarCedula(){
+    // make another implementation public static that takes in cedula parameter if needed outside this class
+    private boolean verificarCedula(){
         boolean ok = false;
         if (cedula !=null){
             int digitos = cedula.length();
@@ -46,7 +47,8 @@ public class Cliente {
     
     }
     
-    public boolean verificarNombre(){
+    // make another implementation public static that takes in nombre parameter if needed outside this class
+    private boolean verificarNombre(){
           return this.getNombre()!=null && !this.getNombre().trim().equals("");
     }
 

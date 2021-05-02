@@ -62,7 +62,7 @@ public class ControlClientes {
         return ok;
     }
 
-    public Cliente buscarClientePorCedula(String unaCedula) {
+    public Cliente getClientePorCedula(String unaCedula) {
         boolean existe = false;
         int pos=0;
         ArrayList<Cliente> lista = this.getClientes();

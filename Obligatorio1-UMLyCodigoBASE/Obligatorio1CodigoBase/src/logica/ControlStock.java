@@ -48,7 +48,7 @@ public class ControlStock {
         return true;
     }
     
-    public Producto buscarProductoPorCodigo(int codigoProducto) {
+    public Producto getProductoPorCodigo(int codigoProducto) {
         for (Producto p: productos) {
             if (p.getCodigo() == codigoProducto) {
                 return p;

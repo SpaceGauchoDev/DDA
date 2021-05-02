@@ -36,7 +36,7 @@ public class Fachada {
     }
     
     public Cliente buscarClientePorCedula(String unaCedula) {
-           return cc.buscarClientePorCedula(unaCedula);
+           return cc.getClientePorCedula(unaCedula);
     }
   
     public boolean agregarCliente(Cliente c){
@@ -80,6 +80,6 @@ public class Fachada {
     }
     
     public Producto buscarProductoPorCodigo(int codigoProducto) {
-        return cs.buscarProductoPorCodigo(codigoProducto);
+        return cs.getProductoPorCodigo(codigoProducto);
     }
 }

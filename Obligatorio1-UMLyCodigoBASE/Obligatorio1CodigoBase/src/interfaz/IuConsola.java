@@ -188,7 +188,7 @@ public class IuConsola {
             mensaje = x + " - " + linea.getProducto().getCodigo() + " - " + 
                     linea.getProducto().getNombre() + " - " + 
                     linea.getCantidad() + " - " + 
-                    " $ " + linea.total();
+                    " $ " + linea.getTotal();
             System.out.println(mensaje);
             x++;
         }

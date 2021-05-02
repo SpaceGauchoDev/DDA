@@ -76,7 +76,7 @@ public class Factura {
     public float total() {
         float total = 0;
         for (LineaFactura linea : lineas) {
-            total += linea.total();
+            total += linea.getTotal();
         }
         return total;
     }

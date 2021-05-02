@@ -3,7 +3,6 @@ package logica;
 public class Producto {
     private String nombre;
     private int precio;
-   // private int stock;
     private int unidades;
     private Proveedor proveedor;
     private int codigo;
@@ -105,6 +104,7 @@ public class Producto {
      }
 
     protected void modificarStock(int cantidad) {
+        //TODO mda: cuidado stock negativo
         unidades+=cantidad;
     }
 }
