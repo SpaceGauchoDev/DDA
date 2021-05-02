@@ -11,6 +11,7 @@ import utilidades.Consola;
 
 public class IuConsola {
     
+    
     Fachada logica = Fachada.getInstancia();
     
     /**

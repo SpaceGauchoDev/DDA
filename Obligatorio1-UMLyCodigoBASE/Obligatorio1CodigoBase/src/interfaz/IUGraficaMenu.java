@@ -3,6 +3,7 @@ package interfaz;
 
 import logica.DatosPrueba;
 import logica.Fachada;
+import utilidades.Consola;
 
 
 public class IUGraficaMenu extends javax.swing.JFrame {
@@ -28,10 +29,13 @@ public class IUGraficaMenu extends javax.swing.JFrame {
         mnuSalir = new javax.swing.JMenuItem();
         menuGestionFacturas = new javax.swing.JMenu();
         mnuAltaFactura = new javax.swing.JMenuItem();
+        menuGestionPromociones = new javax.swing.JMenu();
+        mnuAltaDePromocion = new javax.swing.JMenuItem();
+        mnuReporteDePromocion = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Obligatorio 1");
 
         menuInicio.setText("Inicio");
@@ -58,6 +62,26 @@ public class IUGraficaMenu extends javax.swing.JFrame {
 
         barraMenu.add(menuGestionFacturas);
 
+        menuGestionPromociones.setText("GestionPromociones");
+
+        mnuAltaDePromocion.setText("Alta de promocion");
+        mnuAltaDePromocion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuAltaDePromocionActionPerformed(evt);
+            }
+        });
+        menuGestionPromociones.add(mnuAltaDePromocion);
+
+        mnuReporteDePromocion.setText("Reporte de promoción");
+        mnuReporteDePromocion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuReporteDePromocionActionPerformed(evt);
+            }
+        });
+        menuGestionPromociones.add(mnuReporteDePromocion);
+
+        barraMenu.add(menuGestionPromociones);
+
         setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -82,6 +106,16 @@ public class IUGraficaMenu extends javax.swing.JFrame {
         IuConsola consola = new IuConsola();
         consola.nuevoFactura();
     }//GEN-LAST:event_mnuAltaFacturaActionPerformed
+
+    private void mnuAltaDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAltaDePromocionActionPerformed
+        // TODO add your handling code here:
+        Consola.println("Alta de promocion clicked!");
+    }//GEN-LAST:event_mnuAltaDePromocionActionPerformed
+
+    private void mnuReporteDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReporteDePromocionActionPerformed
+        // TODO add your handling code here:
+        Consola.println("Reporte de promocion clicked!");
+    }//GEN-LAST:event_mnuReporteDePromocionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,8 +156,11 @@ public class IUGraficaMenu extends javax.swing.JFrame {
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu menuGestionFacturas;
+    private javax.swing.JMenu menuGestionPromociones;
     private javax.swing.JMenu menuInicio;
+    private javax.swing.JMenuItem mnuAltaDePromocion;
     private javax.swing.JMenuItem mnuAltaFactura;
+    private javax.swing.JMenuItem mnuReporteDePromocion;
     private javax.swing.JMenuItem mnuSalir;
     // End of variables declaration//GEN-END:variables
 }
