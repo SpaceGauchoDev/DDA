@@ -10,6 +10,7 @@ public class Fachada {
     private ControlClientes cc = new ControlClientes();
     private ControlFacturas cf = new ControlFacturas();
     private ControlStock cs = new ControlStock();
+    private ControlPromociones cpromo = new ControlPromociones();
     
     public static Fachada getInstancia(){
         
@@ -81,5 +82,9 @@ public class Fachada {
     
     public Producto buscarProductoPorCodigo(int codigoProducto) {
         return cs.getProductoPorCodigo(codigoProducto);
+    }
+    
+    public float getPorcentajeDeDescuento(Producto p){
+        return cpromo.porcentajeDeDescuento(p);
     }
 }

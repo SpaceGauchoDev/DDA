@@ -99,22 +99,26 @@ public class IUGraficaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalirActionPerformed
+        Consola.logMsg("Exit clicked!");
         System.exit(0);
     }//GEN-LAST:event_mnuSalirActionPerformed
 
     private void mnuAltaFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAltaFacturaActionPerformed
+        Consola.logMsg("Alta de Factura clicked!");
+        /*
         IuConsola consola = new IuConsola();
         consola.nuevoFactura();
+        */
     }//GEN-LAST:event_mnuAltaFacturaActionPerformed
 
     private void mnuAltaDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAltaDePromocionActionPerformed
         // TODO add your handling code here:
-        Consola.println("Alta de promocion clicked!");
+        Consola.logMsg("Alta de promocion clicked!");
     }//GEN-LAST:event_mnuAltaDePromocionActionPerformed
 
     private void mnuReporteDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReporteDePromocionActionPerformed
         // TODO add your handling code here:
-        Consola.println("Reporte de promocion clicked!");
+        Consola.logMsg("Reporte de promocion clicked!");
     }//GEN-LAST:event_mnuReporteDePromocionActionPerformed
 
     /**

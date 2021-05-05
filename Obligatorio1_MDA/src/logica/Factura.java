@@ -46,7 +46,9 @@ public class Factura {
                 return linea.incrementar(cantidad);
             }
         }
-        lineas.add(new LineaFactura(p, cantidad));
+        
+        float descuento = Fachada.getInstancia().getPorcentajeDeDescuento(p);
+        lineas.add(new LineaFactura(p, cantidad, descuento));
         return true;
     }
     
@@ -76,7 +78,7 @@ public class Factura {
     public float total() {
         float total = 0;
         for (LineaFactura linea : lineas) {
-            total += linea.getTotal();
+            total += linea.getTotalConDescuento();
         }
         return total;
     }

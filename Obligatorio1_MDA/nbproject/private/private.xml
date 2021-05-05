@@ -11,6 +11,21 @@
             <file>file:/C:/Users/deSosa/OneDrive%20-%20Facultad%20de%20Ingenieria%20-%20Universidad%20ORT%20Uruguay/TrabajoCoordAcademico/Obligatorios/DDA/Obligatorio1Abril2021/Obligatorio1-UMLyCodigoBASE/Obligatorio1CodigoBase/src/main/Inicio.java</file>
             <file>file:/C:/Users/deSosa/OneDrive%20-%20Facultad%20de%20Ingenieria%20-%20Universidad%20ORT%20Uruguay/TrabajoCoordAcademico/Obligatorios/DDA/Obligatorio1Abril2021/Obligatorio1-UMLyCodigoBASE/Obligatorio1CodigoBase/src/logica/DatosPrueba.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Fachada.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/DatosPrueba.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/interfaz/IuConsola.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/main/Inicio.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Factura.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/utilidades/Consola.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Promocion.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/ControlClientes.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Cliente.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/ControlPromociones.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/ControlFacturas.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/LineaFactura.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Producto.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/interfaz/IUGraficaMenu.java</file>
+        </group>
     </open-files>
 </project-private>

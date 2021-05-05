@@ -42,6 +42,7 @@ public class Producto {
     public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
+    
     public float getPrecio() {
         return precio;
     }

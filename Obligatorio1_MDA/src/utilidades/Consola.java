@@ -8,11 +8,13 @@ import java.util.logging.Logger;
 public class Consola {
 	
 	protected static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        protected static int verbosityLevel = 1;  
 	
 	public static  void print(String s){
 		System.out.print(s);
 		
 	}
+        
 	public static void println(String s){
 		
 		System.out.println(s);
@@ -25,6 +27,27 @@ public class Consola {
 	public static  void println(int i){
 		System.out.println(i);
 	}
+        
+        public static  void logMsg(String msg){
+            StackTraceElement[] stacktrace = Thread.currentThread().getStackTrace();
+            StackTraceElement e = stacktrace[2];
+            String source = e.getClassName()+ "." +e.getMethodName() + " @"+e.getLineNumber();
+        
+            if(verbosityLevel>0){
+                System.out.println("[" + source + "]"+": "+  msg);
+            }
+	}
+        
+        public static  void log(){
+            StackTraceElement[] stacktrace = Thread.currentThread().getStackTrace();
+            StackTraceElement e = stacktrace[2];
+            String source = e.getClassName()+ "." +e.getMethodName() + " @"+e.getLineNumber();
+        
+            if(verbosityLevel>0){
+                System.out.println("[" + source + "]");
+            }
+	}        
+
 	public static String leer(){
 		
 		try{

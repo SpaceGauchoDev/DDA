@@ -4,10 +4,12 @@ public class LineaFactura {
     
     private Producto producto;
     private int cantidad;
+    private float descuento; //TODO mda: actualizar UML
 
-    public LineaFactura(Producto producto, int cantidad) {
+    public LineaFactura(Producto producto, int cantidad, float descuento) {
         this.producto = producto;
         this.cantidad = cantidad;
+        this.descuento = descuento;
     }
 
     public Producto getProducto() {
@@ -37,7 +39,7 @@ public class LineaFactura {
         return  getProducto().getCodigo() + " - " + 
                 getProducto().getNombre() + " - " + 
                 getCantidad() + " - " + 
-                " $ " + getTotal();
+                " $ " + getTotalConDescuento();
     }
 
     // TODO mda: revisar si esto cumple experto
@@ -49,8 +51,9 @@ public class LineaFactura {
         return true;
     }
     
-    public float getTotal() {
-        return cantidad * producto.getPrecio();
+    //TODO mda: Actualizar UML
+    public float getTotalConDescuento() {
+        return cantidad * producto.getPrecio() * (1 - descuento);
     }
     
     // TODO mda: revisar si esto cumple experto
