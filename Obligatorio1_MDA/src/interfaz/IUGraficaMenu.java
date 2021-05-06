@@ -108,10 +108,8 @@ public class IUGraficaMenu extends javax.swing.JFrame {
 
     private void mnuAltaFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAltaFacturaActionPerformed
         Consola.logMsg("Alta de Factura clicked!");
-        /*
         IuConsola consola = new IuConsola();
         consola.nuevoFactura();
-        */
     }//GEN-LAST:event_mnuAltaFacturaActionPerformed
 
     private void mnuAltaDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAltaDePromocionActionPerformed
@@ -120,21 +118,6 @@ public class IUGraficaMenu extends javax.swing.JFrame {
         
         DialogoAltaPromocion dialogoAltaPromocion = new DialogoAltaPromocion(this, true, nuevaPromocion);
         dialogoAltaPromocion.setVisible(true);
-        /*
-        Producto nuevoProducto = new Producto();
-        nuevoProducto.setProveedor(Fachada.getInstancia().getProveedores().get(0));
-        //nuevoProducto.setNombre("nuevo nombre de producto");
-        //nuevoProducto.setPrecio(10);
-        //nuevoProducto.setUnidades(15);
-        
-        DialogoProducto dProducto = new DialogoProducto(this, true, nuevoProducto);
-        dProducto.setVisible(true);
-        
-        if(!Fachada.getInstancia().agregar(nuevoProducto)) {
-            JOptionPane.showMessageDialog(this, "No se pudo agregar producto");
-        }
-        actualizarListaProductos();        
-        */
     }//GEN-LAST:event_mnuAltaDePromocionActionPerformed
 
     private void mnuReporteDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReporteDePromocionActionPerformed

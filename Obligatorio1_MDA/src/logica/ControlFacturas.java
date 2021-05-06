@@ -62,7 +62,7 @@ public class ControlFacturas {
         return result;
     }
     
-    public InfoProducto InformacionPorProducto(Producto p){
+    public InfoProducto informacionPorProducto(Producto p){
         InfoProducto info = new InfoProducto();
         
         info.setNombre(p.getNombre());

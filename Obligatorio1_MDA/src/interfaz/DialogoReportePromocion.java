@@ -172,7 +172,7 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
         
         for (Producto p:productosEnPromo){
             String lineaProducto = new String();
-            InfoProducto info = logica.InformacionPorProducto(p);
+            InfoProducto info = logica.informacionPorProducto(p);
             lineaProducto =     "N: " + info.getNombre() + 
                                 " - P: "  + info.getPrecioDeLista() + 
                                 " - F: " + info.getCantidadDeFacturas() +

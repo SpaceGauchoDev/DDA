@@ -24,7 +24,7 @@ public class Fachada {
         return cc.getClientes();
     }
     
-    public ArrayList clientesNoCompraronProductoMenorPrecio(){
+    public ArrayList<Cliente> clientesNoCompraronProductoMenorPrecio(){
         return cc.clientesNoCompraronProductoMenorPrecio();
     }
     
@@ -108,7 +108,7 @@ public class Fachada {
         return cf.montoTotalDescontadoPorProducto(p);
     }
     
-    public InfoProducto InformacionPorProducto(Producto p){
-        return cf.InformacionPorProducto(p);
+    public InfoProducto informacionPorProducto(Producto p){
+        return cf.informacionPorProducto(p);
     }
 }
