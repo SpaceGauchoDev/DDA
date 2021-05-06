@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import utilidades.Consola;
 import logica.Fachada;
 import logica.Promocion;
+import logica.Producto;
+import logica.InfoProducto;
 
 public class DialogoReportePromocion extends javax.swing.JDialog {
     
@@ -41,9 +43,9 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Obligatorio 1 - MDA");
         setLocation(new java.awt.Point(710, 390));
-        setPreferredSize(new java.awt.Dimension(500, 300));
+        setPreferredSize(new java.awt.Dimension(500, 500));
         setResizable(false);
-        setSize(new java.awt.Dimension(500, 300));
+        setSize(new java.awt.Dimension(500, 500));
 
         jLabel4.setText("Seleccione promocion:");
 
@@ -100,7 +102,7 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
                     .addComponent(verReporteButton)
                     .addComponent(Cancelar))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -162,10 +164,24 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
 
         lineasReporte.add("Codigo: " + selectedPromo.getCodigo()  + " - Nombre: " + selectedPromo.getNombre() + " - Descuento: "  + selectedPromo.getDescuento() + "%");
         float montoTotal = logica.montoDeDescuentoOtorgadoPorPromocion(selectedPromo.getCodigo());
+
         lineasReporte.add("Monto total de descuento otorgado: " + montoTotal);
         lineasReporte.add("Lista de productos incluidos: ");
         
-
+        ArrayList <Producto> productosEnPromo = selectedPromo.getProductos();
+        
+        for (Producto p:productosEnPromo){
+            String lineaProducto = new String();
+            InfoProducto info = logica.InformacionPorProducto(p);
+            lineaProducto =     "N: " + info.getNombre() + 
+                                " - P: "  + info.getPrecioDeLista() + 
+                                " - F: " + info.getCantidadDeFacturas() +
+                                " - U: " + info.getCantidadDeUnidadesVenidas() +
+                                " - M: " + info.getMontoTotalDescuento();
+            
+            lineasReporte.add(lineaProducto);
+        }
+               
         outputTextArea.setText(Stringify(lineasReporte));
     }
     

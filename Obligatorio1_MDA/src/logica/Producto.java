@@ -41,7 +41,7 @@ public class Producto {
         this.proveedor = proveedor;
     }
     
-    public float getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 

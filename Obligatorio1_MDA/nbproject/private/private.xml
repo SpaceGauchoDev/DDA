@@ -13,11 +13,10 @@
         </group>
         <group>
             <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Fachada.java</file>
-            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/interfaz/DialogoReportePromocion.java</file>
-            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/DatosPrueba.java</file>
-            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/ControlPromociones.java</file>
             <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/ControlFacturas.java</file>
-            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Factura.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/interfaz/DialogoReportePromocion.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/LineaFactura.java</file>
+            <file>file:/D:/MyStuff/ORT/AP/S60/Diseño/Entrega_1/Obligatorio1_MDA/src/logica/Producto.java</file>
         </group>
     </open-files>
 </project-private>

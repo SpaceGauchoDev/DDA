@@ -87,6 +87,16 @@ public class Factura {
         }
         return result;
     }
+    
+    public int obtenerCantidadDeProducto(Producto unP){
+        int result = 0;
+        for(LineaFactura l: lineas){
+            if(l.tieneProducto(unP)){
+                result = l.getCantidad();
+            }
+        }
+        return result;
+    }
 
     @Override
     public String toString() {

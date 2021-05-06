@@ -62,5 +62,30 @@ public class ControlFacturas {
         return result;
     }
     
+    public InfoProducto InformacionPorProducto(Producto p){
+        InfoProducto info = new InfoProducto();
+        
+        info.setNombre(p.getNombre());
+        info.setPrecioDeLista(p.getPrecio());
+        
+        int facturasEnLasQueAparece = 0;
+        for(Factura f: facturas){
+            if (f.tieneProducto(p)) {
+                facturasEnLasQueAparece++; 
+            }
+        }
+        info.setCantidadDeFacturas(facturasEnLasQueAparece);
+        
+        int cantidadesTotalesVendidas = 0;
+        for(Factura f: facturas){
+            if (f.tieneProducto(p)) {
+                cantidadesTotalesVendidas+= f.obtenerCantidadDeProducto(p);
+            }
+        }
+        info.setCantidadDeUnidadesVenidas(cantidadesTotalesVendidas);
+        info.setMontoTotalDescuento(montoTotalDescontadoPorProducto(p));
+        
+        return info;
+    }
     
 }

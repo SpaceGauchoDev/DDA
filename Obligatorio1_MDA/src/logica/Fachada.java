@@ -107,4 +107,8 @@ public class Fachada {
     public float montoTotalDescontadoPorProducto(Producto p){
         return cf.montoTotalDescontadoPorProducto(p);
     }
+    
+    public InfoProducto InformacionPorProducto(Producto p){
+        return cf.InformacionPorProducto(p);
+    }
 }

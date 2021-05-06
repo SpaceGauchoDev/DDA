@@ -54,7 +54,7 @@ public class DatosPrueba {
         
         ArrayList <Producto> productos_2 = new ArrayList();
         productos_2.add(detergente);
-        productos_2.add(manteca);
+        productos_2.add(caramelo);
         Promocion promo2 = new Promocion("PRO_2", "Promo comida", 50, productos_2 );
         logica.agregarPromocion(promo2);
        
@@ -90,7 +90,7 @@ public class DatosPrueba {
         f1.agregar(2, camisa);
         f1.agregar(1, computadora);
         logica.agregarFactura(f1);
-        
+        /*
         Factura f2 = new Factura(ana);
         f2.agregar(400, caramelo);
         f2.agregar(20, camisa);
@@ -101,17 +101,18 @@ public class DatosPrueba {
         f3.agregar(1, pantufla);
         f3.agregar(1, computadora);
         logica.agregarFactura(f3);
-        
+        */
         Factura f4 = new Factura(danilo);
         f4.agregar(5, manteca);
         f4.agregar(2, pantufla);
         f4.agregar(1, detergente);
         logica.agregarFactura(f4);
         
+        /*
         Factura f5 = new Factura(yamila);
         f5.agregar(2, lamparita);
         f5.agregar(1, taza);
         logica.agregarFactura(f5);
-
+        */
     }
 }
