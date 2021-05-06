@@ -9,8 +9,6 @@ public class Producto {
 
     public Producto() {
     }
-    
-    
 
     public Producto(String nombre, int precio, int stock, Proveedor proveedor) {
         this.nombre = nombre;
@@ -54,8 +52,6 @@ public class Producto {
         }
         return false;
     }
-
-   
 
     public String getNombre() {
         return nombre;

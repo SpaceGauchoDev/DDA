@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Promocion {
     private String codigo;
     private String nombre;
-    private float porcentajeDeDescuento;
+    private int porcentajeDeDescuento;
     private ArrayList <Producto> productos;
     
     Promocion(){
@@ -15,30 +15,43 @@ public class Promocion {
         productos = new ArrayList();
     }
     
-    //TODO mda: implementar
     public boolean contieneProducto(Producto p){
-        return true;
+        boolean result = false;
+        
+        for(Producto prod: productos){
+            if(prod.getCodigo() == p.getCodigo()){
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
     
-    public float getDescuento(){
+    public int getDescuento(){
         return porcentajeDeDescuento;
     }
     
-    //TODO mda: actualizar UML
     public String getCodigo(){
         return codigo;
     }
-
-    //TODO mda: implementar
-    // codigo.lenght == 5
-    // porcentajeDeDescuento >=0 && porcentajeDeDescuento <=1
-    public boolean validar(){
-        
-        return true;
+    
+    private boolean verificarDescuento(){
+        return porcentajeDeDescuento >=0 && porcentajeDeDescuento <=100;
     }
     
-    //TODO mda: actualizar UML
+    private boolean verificarNombre(){
+        return nombre.length() >= 3 && nombre.length()<= 64 && !nombre.equals("default");
+    }
+    
+    private boolean verificarCodigo(){
+        return codigo.length() == 5 && !codigo.equals("aaaaa");
+    }
+
+    public boolean validar(){
+        return verificarDescuento() && verificarNombre() && verificarCodigo();
+    }
+    
     public boolean compararCodigo(String cod){
-        return cod==codigo;
+        return cod.equals(codigo);
     }
 }

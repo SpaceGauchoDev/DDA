@@ -14,7 +14,7 @@ public class ControlClientes {
         return clientes;
     }
     
-    public ArrayList clientesNoCompraronProductoMenorPrecio(){
+    public ArrayList<Cliente> clientesNoCompraronProductoMenorPrecio(){
         Producto menor = Fachada.getInstancia().getProductoMenorPrecio();
         ArrayList<Cliente> retorno = new ArrayList<Cliente>();
         
@@ -26,7 +26,7 @@ public class ControlClientes {
         return retorno;
     }
     
-    ArrayList clientesCompraronProductoMenorPrecio() {
+    public ArrayList<Cliente> clientesCompraronProductoMenorPrecio() {
         Producto menor = Fachada.getInstancia().getProductoMenorPrecio();
         ArrayList<Cliente> retorno = new ArrayList<Cliente>();
         

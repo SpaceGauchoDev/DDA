@@ -29,11 +29,19 @@ public class Factura {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+    
+    public Date getFecha() {
+        return fecha;
+    }    
+    
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
 
     public ArrayList<LineaFactura> getLineas() {
         return lineas;
     }
-
+    
     public boolean agregar(int cantidad, Producto p){
         if (cantidad == 0) {
             return false;
@@ -47,13 +55,13 @@ public class Factura {
             }
         }
         
-        float descuento = Fachada.getInstancia().getPorcentajeDeDescuento(p);
+        int descuento = Fachada.getInstancia().getDescuentoPorProducto(p);
         lineas.add(new LineaFactura(p, cantidad, descuento));
         return true;
     }
     
-    public boolean agregarPorCodigoProducto(int cantidad, int codigoProducto){
-        Producto p = Fachada.getInstancia().buscarProductoPorCodigo(codigoProducto);
+    public boolean agregarPorCodigoProducto(int cantidad, int codigo){
+        Producto p = Fachada.getInstancia().buscarProductoPorCodigo(codigo);
         if (p == null){
             return false;
         }
@@ -82,19 +90,11 @@ public class Factura {
         }
         return total;
     }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
+    
     public void asignarFecha() {
         this.setFecha(new Date());
-    }
-    
+    } 
+
     protected void bajarStock() {
         for(LineaFactura lf:lineas){
             lf.bajarStock();

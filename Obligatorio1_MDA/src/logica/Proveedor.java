@@ -23,7 +23,6 @@ public class Proveedor {
         return productos;
     }
     public void agregar(Producto p){
-        //TODO MDA: verificar productos repetidos
         productos.add(p);
     }
 

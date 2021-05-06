@@ -84,7 +84,7 @@ public class Fachada {
         return cs.getProductoPorCodigo(codigoProducto);
     }
     
-    public float getPorcentajeDeDescuento(Producto p){
-        return cpromo.porcentajeDeDescuento(p);
+    public int getDescuentoPorProducto(Producto p){
+        return cpromo.getDescuento(p);
     }
 }

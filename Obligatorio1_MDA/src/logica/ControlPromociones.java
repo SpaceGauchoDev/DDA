@@ -13,10 +13,13 @@ public class ControlPromociones {
         return promociones;
     }
     
-    //TODO mda: implementar
-    public void agregar(Promocion p){
-        
-        
+    public boolean agregar(Promocion p){
+        boolean ok = false;
+        if(p.validar() && getPromocion(p.getCodigo()) == null){
+            promociones.add(p);
+            ok = true;
+        }
+        return ok;
     }
     
     public Promocion getPromocion(String codigo){
@@ -30,8 +33,11 @@ public class ControlPromociones {
         return promo;
     } 
     
-    public float porcentajeDeDescuento(Producto p){
-        float porcentaje = 0;
+    public int getDescuento(Producto p){
+        int porcentaje = 0;
+        // si encontramos un producto listado en una promocion devolvemos su descuento
+        // si no lo encontramos significa su descuento es 0
+        
         for (Promocion promo: promociones){
             if(promo.contieneProducto(p)){
                 porcentaje = promo.getDescuento();

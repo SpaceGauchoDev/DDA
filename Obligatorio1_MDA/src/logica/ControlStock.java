@@ -39,6 +39,7 @@ public class ControlStock {
         proveedores.add(unProveedor);
     }
     
+    //TODO MDA: esto permite tener dos productos identicos en todo menos codigo
     public  boolean agregar (Producto unProducto){
         if(!unProducto.validar()) return false;
         unProducto.setCodigo(proxIdProd);

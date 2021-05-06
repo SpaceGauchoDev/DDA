@@ -4,9 +4,9 @@ public class LineaFactura {
     
     private Producto producto;
     private int cantidad;
-    private float descuento; //TODO mda: actualizar UML
+    private int descuento;
 
-    public LineaFactura(Producto producto, int cantidad, float descuento) {
+    public LineaFactura(Producto producto, int cantidad, int descuento) {
         this.producto = producto;
         this.cantidad = cantidad;
         this.descuento = descuento;
@@ -16,7 +16,6 @@ public class LineaFactura {
         return producto;
     }
 
-    // TODO mda: revisar si esto cumple experto
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
@@ -25,10 +24,18 @@ public class LineaFactura {
         return cantidad;
     }
 
-    // TODO mda: revisar si esto cumple experto
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    
+    public int getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(int d) {
+        this.descuento = d;
+    }    
+    
     
     public boolean tieneProducto(Producto unP){
         return this.getProducto().equals(unP);
@@ -42,7 +49,6 @@ public class LineaFactura {
                 " $ " + getTotalConDescuento();
     }
 
-    // TODO mda: revisar si esto cumple experto
     boolean incrementar(int cantidad) {
         if (this.cantidad + cantidad > producto.getUnidades()) {
             return false;
@@ -51,12 +57,10 @@ public class LineaFactura {
         return true;
     }
     
-    //TODO mda: Actualizar UML
     public float getTotalConDescuento() {
-        return cantidad * producto.getPrecio() * (1 - descuento);
+        return cantidad * (producto.getPrecio() - (producto.getPrecio()* descuento/100));
     }
     
-    // TODO mda: revisar si esto cumple experto
     protected void bajarStock() {
         producto.modificarStock(-cantidad);
     }
