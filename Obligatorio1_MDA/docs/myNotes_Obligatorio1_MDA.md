@@ -39,4 +39,6 @@
 				**- text box:**  	Mensaje "no hay promociones" 
 				**- button:**		Atrás
 				
-				
+**2021-05-06**
+detect changes spinner https://stackoverflow.com/a/40057344
+detecte changes text fields https://stackoverflow.com/a/47828234

@@ -8,7 +8,7 @@ public class Promocion {
     private int porcentajeDeDescuento;
     private ArrayList <Producto> productos;
     
-    Promocion(){
+    public Promocion(){
         codigo = "aaaaa";
         nombre = "default";
         porcentajeDeDescuento = 0;

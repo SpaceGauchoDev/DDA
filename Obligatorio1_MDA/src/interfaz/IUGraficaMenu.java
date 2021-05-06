@@ -3,6 +3,7 @@ package interfaz;
 
 import logica.DatosPrueba;
 import logica.Fachada;
+import logica.Promocion;
 import utilidades.Consola;
 
 
@@ -36,7 +37,9 @@ public class IUGraficaMenu extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Obligatorio 1");
+        setTitle("Obligatorio 1 - MDA");
+        setLocation(new java.awt.Point(0, 0));
+        setResizable(false);
 
         menuInicio.setText("Inicio");
 
@@ -112,13 +115,32 @@ public class IUGraficaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuAltaFacturaActionPerformed
 
     private void mnuAltaDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAltaDePromocionActionPerformed
-        // TODO add your handling code here:
         Consola.logMsg("Alta de promocion clicked!");
+        Promocion nuevaPromocion = new Promocion();
+        
+        DialogoAltaPromocion dialogoAltaPromocion = new DialogoAltaPromocion(this, true, nuevaPromocion);
+        dialogoAltaPromocion.setVisible(true);
+        /*
+        Producto nuevoProducto = new Producto();
+        nuevoProducto.setProveedor(Fachada.getInstancia().getProveedores().get(0));
+        //nuevoProducto.setNombre("nuevo nombre de producto");
+        //nuevoProducto.setPrecio(10);
+        //nuevoProducto.setUnidades(15);
+        
+        DialogoProducto dProducto = new DialogoProducto(this, true, nuevoProducto);
+        dProducto.setVisible(true);
+        
+        if(!Fachada.getInstancia().agregar(nuevoProducto)) {
+            JOptionPane.showMessageDialog(this, "No se pudo agregar producto");
+        }
+        actualizarListaProductos();        
+        */
     }//GEN-LAST:event_mnuAltaDePromocionActionPerformed
 
     private void mnuReporteDePromocionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReporteDePromocionActionPerformed
-        // TODO add your handling code here:
         Consola.logMsg("Reporte de promocion clicked!");
+        DialogoReportePromocion dialogoReportePromocion = new DialogoReportePromocion(this, true);
+        dialogoReportePromocion.setVisible(true);
     }//GEN-LAST:event_mnuReporteDePromocionActionPerformed
 
     /**
