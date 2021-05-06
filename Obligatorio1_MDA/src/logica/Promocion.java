@@ -15,6 +15,13 @@ public class Promocion {
         productos = new ArrayList();
     }
     
+    public Promocion(String c, String n, int p, ArrayList <Producto> pr){
+        codigo = c;
+        nombre = n;
+        porcentajeDeDescuento = p;
+        productos = pr;
+    }
+    
     public boolean contieneProducto(Producto p){
         boolean result = false;
         
@@ -31,8 +38,16 @@ public class Promocion {
         return porcentajeDeDescuento;
     }
     
+    public String getNombre(){
+        return nombre;
+    }
+    
     public String getCodigo(){
         return codigo;
+    }
+    
+    public ArrayList <Producto> getProductos(){
+        return productos;
     }
     
     private boolean verificarDescuento(){

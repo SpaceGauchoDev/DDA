@@ -1,11 +1,18 @@
 package interfaz;
+
+import java.util.ArrayList;
 import utilidades.Consola;
+import logica.Fachada;
+import logica.Promocion;
 
 public class DialogoReportePromocion extends javax.swing.JDialog {
+    
+    Fachada logica = Fachada.getInstancia();
     
     public DialogoReportePromocion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        actualizarListaPromociones();
     }
 
     /**
@@ -24,7 +31,7 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
         jScrollPane2 = new javax.swing.JScrollPane();
         outputTextArea = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        promocionesList = new javax.swing.JList<>();
         Cancelar = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
@@ -51,11 +58,10 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
         outputTextArea.setRows(5);
         jScrollPane2.setViewportView(outputTextArea);
 
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane3.setViewportView(jList1);
+        promocionesList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(promocionesList);
 
         Cancelar.setText("Cancelar");
-        Cancelar.setActionCommand("Cancelar");
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelarActionPerformed(evt);
@@ -103,7 +109,8 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
 
     private void verReporteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verReporteButtonActionPerformed
         Consola.logMsg("Ver Reporte clicked!");
-        this.cancelar();
+        actualizarReporteDePromociones();
+        //this.cancelar();
     }//GEN-LAST:event_verReporteButtonActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
@@ -114,17 +121,60 @@ public class DialogoReportePromocion extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea outputTextArea;
+    private javax.swing.JList<String> promocionesList;
     private javax.swing.JButton verReporteButton;
     // End of variables declaration//GEN-END:variables
 
     private void cancelar() {
         this.dispose();
+    }
+    
+    public void actualizarListaPromociones() {
+        ArrayList <Promocion> promos =  logica.getPromociones();
+        if(promos.isEmpty()){
+            outputTextArea.setText("No existen promociones ingresadas.");
+            return;
+        }
+        
+        ArrayList <String> nombresPromos;
+        nombresPromos = new ArrayList();
+        for(Promocion p:promos){
+            nombresPromos.add(p.getNombre());
+        }
+        promocionesList.setListData(nombresPromos.toArray(String[]::new));
+    }
+    
+    
+    public void actualizarReporteDePromociones() {
+        ArrayList <Promocion> promos =  logica.getPromociones();
+        if(promos.isEmpty()){
+            outputTextArea.setText("No existen promociones ingresadas.");
+            return;
+        }
+
+        Promocion selectedPromo = promos.get(promocionesList.getSelectedIndex());
+        ArrayList <String> lineasReporte = new ArrayList();
+
+        lineasReporte.add("Codigo: " + selectedPromo.getCodigo()  + " - Nombre: " + selectedPromo.getNombre() + " - Descuento: "  + selectedPromo.getDescuento() + "%");
+        float montoTotal = logica.montoDeDescuentoOtorgadoPorPromocion(selectedPromo.getCodigo());
+        lineasReporte.add("Monto total de descuento otorgado: " + montoTotal);
+        lineasReporte.add("Lista de productos incluidos: ");
+        
+
+        outputTextArea.setText(Stringify(lineasReporte));
+    }
+    
+    private String Stringify(ArrayList <String> lineas){
+        String result = new String();
+        for (String s:lineas){
+            result = result.concat(s + "\n");
+        }
+        return result;
     }
     
 }

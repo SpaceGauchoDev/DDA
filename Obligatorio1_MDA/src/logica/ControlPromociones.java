@@ -47,4 +47,18 @@ public class ControlPromociones {
         return porcentaje;
     }
     
+    
+    public float montoDeDescuentoOtorgadoPorPromocion(String codigoPromo){
+        Promocion promo = getPromocion(codigoPromo);
+        ArrayList <Producto> productos = promo.getProductos();
+        float result = 0;
+        for (Producto prod: productos){
+            result += Fachada.getInstancia().montoTotalDescontadoPorProducto(prod);
+        }
+        
+        return result;
+    }
+    
+    
+    
 }

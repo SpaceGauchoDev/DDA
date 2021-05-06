@@ -77,6 +77,16 @@ public class Factura {
         }
         return ret;       
     }
+    
+    public float obtenerMontoDescontadoPorProducto(Producto unP){
+        float result = 0;
+        for(LineaFactura l: lineas){
+            if(l.tieneProducto(unP)){
+                result = l.getMontoDescontado();
+            }
+        }
+        return result;
+    }
 
     @Override
     public String toString() {

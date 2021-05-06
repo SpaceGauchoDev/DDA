@@ -87,4 +87,24 @@ public class Fachada {
     public int getDescuentoPorProducto(Producto p){
         return cpromo.getDescuento(p);
     }
+    
+    public void agregarPromocion(Promocion unaPromocion){
+        cpromo.agregar(unaPromocion);
+    }
+    
+    public ArrayList<Promocion> getPromociones() {
+        return cpromo.getPromociones();
+    }
+    
+    public Promocion getPromocion(String codigoPromo) {
+        return cpromo.getPromocion(codigoPromo);
+    }
+    
+    public float montoDeDescuentoOtorgadoPorPromocion(String codigoPromo){
+        return cpromo.montoDeDescuentoOtorgadoPorPromocion(codigoPromo);
+    }
+    
+    public float montoTotalDescontadoPorProducto(Producto p){
+        return cf.montoTotalDescontadoPorProducto(p);
+    }
 }

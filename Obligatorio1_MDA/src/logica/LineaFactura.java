@@ -61,6 +61,10 @@ public class LineaFactura {
         return cantidad * (producto.getPrecio() - (producto.getPrecio()* descuento/100));
     }
     
+    public float getMontoDescontado() {
+        return cantidad * (producto.getPrecio()* descuento/100);
+    }
+    
     protected void bajarStock() {
         producto.modificarStock(-cantidad);
     }

@@ -48,5 +48,19 @@ public class ControlFacturas {
     private int generarProximoNumero(){
         proximoNumero++;
         return proximoNumero;
-    }  
+    }
+    
+    public float montoTotalDescontadoPorProducto(Producto p){
+        float result = 0;
+        
+        for(Factura f: facturas){
+            if (f.tieneProducto(p)) {
+                result += f.obtenerMontoDescontadoPorProducto(p);
+            }
+        }
+        
+        return result;
+    }
+    
+    
 }
